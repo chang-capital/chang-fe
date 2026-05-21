@@ -1,12 +1,18 @@
 import Link from "next/link";
+import Image from "next/image";
 
 export default function Home() {
   return (
     <div className="mt-24 px-32">
       <h1 className="text-4xl font-bold">Chang Capital</h1>
       <p className="text-lg text-gray-600 mt-3">
-        the next crypto quantitative trading company.
+        the next quantitative trading company.
       </p>
+      <div className="flex mt-4 gap-3">
+        <Link href="https://github.com/chang-capital" target="_blank" rel="noopener noreferrer" className="text-blue-500 hover:text-blue-700">
+          Github
+        </Link>
+      </div>
       <hr className="mt-4 w-[90%]" />
       <h1 className="text-3xl font-semibold mt-8">What do You Want to Trade?</h1>
       <p className="text-gray-600 mt-2">Choose the cryptocurrency you want to trade:</p>
