@@ -1,7 +1,7 @@
 export default function Home() {
   return (
-    <div>
-      <h1>Hello World</h1>
+    <div className="mt-24 px-32">
+      <h1 className="text-4xl font-bold">Chang Capital</h1>
     </div>
   );
 }
