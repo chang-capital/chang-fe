@@ -27,3 +27,11 @@ export async function getRsiStatus() {
         method: "GET"
     })
 }
+
+export async function fetchTrades(symbol, limit) {
+    const url = `${BINANCE_API}/trades?symbol=${symbol}&limit=${limit}`;
+    return callApi({
+        url,
+        method: "GET"
+    })
+}
