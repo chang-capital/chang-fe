@@ -35,3 +35,11 @@ export async function fetchTrades(symbol, limit) {
         method: "GET"
     })
 }
+
+export async function fetchTickers(symbol) {
+    const url = `https://data-api.binance.vision/api/v3/ticker/price?symbol=${symbol}`;
+    return callApi({
+        url,
+        method: "GET"
+    })
+}
