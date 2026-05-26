@@ -12,7 +12,7 @@ const MarketFlow = () => {
             <Link className="text-blue-500" href={`/${coin}`}>Back</Link>
             <h1 className="text-3xl font-bold mt-3">{coin}</h1>
             <hr className="mt-4" />
-            <LiveTradeFeed symbol={coin} limit={20} />
+            <LiveTradeFeed symbol={coin} limit={64} />
         </div>
     )
 }
