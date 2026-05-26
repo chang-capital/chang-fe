@@ -1,10 +1,29 @@
+import { useState, useEffect } from "react"
 import { useRouter } from "next/router"
 import Link from "next/link"
+import { fetchTickers } from "@/services/bot";
 
 const Symbol = () => {
+    const [price, setPrice] = useState(null)
+    const [status, setStatus] = useState('loading')
+
     const router = useRouter()
     const { symbol } = router.query
     const coin = symbol?.toUpperCase()
+
+    // useEffect(() => {
+    //     async function load() {
+    //         try {
+    //             const data = await fetchTickers(coin)
+    //             console.log("fetchTickers", data.data)
+    //         } catch (error) {
+    //             setStatus('error')
+    //         }
+    //     }
+    //     load()
+    //     const interval = setInterval(load, 1500); // polling tiap 1.5 detik
+    //     return () => clearInterval(interval);
+    // }, [symbol])
 
     return (
         <div className="mt-24 px-32">

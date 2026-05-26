@@ -1,10 +1,9 @@
 'use client';
 
 import { useEffect, useState } from 'react';
-import Link from 'next/link';
-import { fetchTrades } from '@/sevices/bot';
+import { fetchTrades } from '@/services/bot';
 
-const LiveTradeFeed = ({ symbol, limit }) => {
+const MarketFlow = ({ symbol, limit }) => {
     const [trades, setTrades] = useState([]);
     const [status, setStatus] = useState('connecting');
     const [lastPrice, setLastPrice] = useState(null);
@@ -100,4 +99,4 @@ const LiveTradeFeed = ({ symbol, limit }) => {
     )
 }
 
-export default LiveTradeFeed
+export default MarketFlow
