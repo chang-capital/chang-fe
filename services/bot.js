@@ -3,6 +3,7 @@ import callApi from "@/config/api";
 
 const ROOT_API = "http://localhost:8000";
 
+// bot management
 // rsi strategy
 export async function startRsiStrategy() {
     const url = `${ROOT_API}/bot/start-rsi`;
@@ -28,6 +29,7 @@ export async function getRsiStatus() {
     })
 }
 
+// price data
 export async function fetchTrades(symbol, limit) {
     const url = `https://data-api.binance.vision/api/v3/trades?symbol=${symbol}&limit=${limit || 10}`;
     return callApi({
@@ -41,6 +43,15 @@ export async function fetchTickers(symbol, interval = '1h', limit = 64) {
         `?symbol=${symbol}` +
         `&interval=${interval}` +
         `&limit=${limit}`;
+    return callApi({
+        url,
+        method: "GET"
+    })
+}
+
+// info
+export async function getAccountInfo() {
+    const url = `${ROOT_API}/info/account`;
     return callApi({
         url,
         method: "GET"
