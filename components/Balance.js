@@ -5,13 +5,13 @@ const Balance = ({ account, coinSymbol }) => {
     const [usdtBalance, setUsdtBalance] = useState(0)
 
     useEffect(() => {
-        if(account) {
+        if(account && coinSymbol) {
             const balance = account.balances.find(b => b.asset === coinSymbol)
             const usdt = account.balances.find(b => b.asset === 'USDT')
             setUsdtBalance(usdt ? usdt.free : '0')
             setCoinBalance(balance ? balance.free : '0')
         }
-    }, [account])
+    }, [account, coinSymbol])
     return (
         <div className="py-4 flex justify-between items-center">
             <h2 className="text-xl font-semibold">
